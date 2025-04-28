@@ -17,7 +17,7 @@ import WaitlistSignup from "./components/WaitListSignup.jsx";
 import ReactGA from 'react-ga4';
 
 const GOOGLE_ANALYTICS_TRACKING_ID = "G-F24QNGB66Y";
-
+// const GOOGLE_ANALYTICS_TRACKING_ID = "G-F24QNGB66Y";
 const App = () => {
     useEffect(() => {
         // Initialize Google Analytics
