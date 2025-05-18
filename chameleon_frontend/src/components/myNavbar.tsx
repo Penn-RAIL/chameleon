@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 const MyNavbar = () => {
   const [textColor, setTextColor] = useState('white');
   const [backgroundColor, setBackgroundColor] = useState('transparent');
+  const [brandFontSize, setBrandFontSize] = useState('2.5rem');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,6 +33,23 @@ const MyNavbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) { // md breakpoint, adjust as needed
+        setBrandFontSize('1.5rem'); // Smaller font size for small screens
+      } else {
+        setBrandFontSize('2.5rem'); // Original font size for larger screens
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Set initial size
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
 
   return (
     <Navbar fixed="top" expand="lg" id="navbar" style={{ backgroundColor: backgroundColor }}>
@@ -43,7 +61,7 @@ const MyNavbar = () => {
             to="header" 
             smooth={true} 
             duration={300} 
-            style={{cursor: 'pointer', color: textColor, fontSize: '2.5rem', fontWeight: 'bold' }}
+            style={{cursor: 'pointer', color: textColor, fontSize: brandFontSize, fontWeight: 'bold' }}
           >
             Chameleon Dataset
           </Nav.Link>

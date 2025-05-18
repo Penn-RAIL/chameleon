@@ -4,7 +4,7 @@ export function DatasetSummary() {
         <div className="  bg-sky-700 p-6">
             <h2 className="text-2xl font-bold mb-6 text-gray-800 font-bold text-white">About the Dataset</h2>
         </div>
-        <div className="prose prose-lg max-w-none text-xl p-6">
+        <div className="prose sm:prose-lg max-w-none text-base sm:text-xl p-3 sm:p-4 md:p-6">
           <p>
             The Chameleon Dataset is a large-scale collection of 10,000 fully synthetic chest CT radiology reports
             generated using OpenAI's GPT-4o. Created without using any real patient data, this HIPAA-compliant, PHI-free

@@ -129,7 +129,7 @@ export function ExampleReports() {
     <div className="bg-white rounded-xl shadow-md p-6 mb-8">
       <h3 className="text-2xl font-bold mb-4 text-gray-800">Example Reports</h3>
       <Tabs defaultValue="tuberculosis">
-        <TabsList className="grid w-full grid-cols-3">
+        <TabsList className="grid w-full grid-cols-1 md:grid-cols-3 h-auto md:h-9">
           <TabsTrigger value="tuberculosis">Tuberculosis</TabsTrigger>
           <TabsTrigger value="pe">Pulmonary Embolism</TabsTrigger>
           <TabsTrigger value="normal">Normal Study</TabsTrigger>
