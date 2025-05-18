@@ -33,6 +33,7 @@ export function AccessResources() {
   });
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -44,13 +45,17 @@ export function AccessResources() {
     setRecaptchaToken(token);
   };
 
+  const handleAgreementChange = (checked: boolean) => {
+    setAgreedToTerms(checked);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsFormSubmitted(true);
-    // if (validateForm()) {
-    if(true) {
+    if(agreedToTerms) {
       console.log("Form submitted with data:", formData);
       console.log("reCAPTCHA token:", recaptchaToken);
+      console.log("Agreed to terms:", agreedToTerms);
       await handleDownload();
       setIsModalOpen(false);
       setFormData({
@@ -61,8 +66,12 @@ export function AccessResources() {
       });
       setRecaptchaToken(null);
       setIsFormSubmitted(false);
+      setAgreedToTerms(false);
     } else {
-      console.log("Form validation failed or reCAPTCHA not completed.");
+      console.log("Form validation failed, reCAPTCHA not completed, or terms not agreed.");
+      if (!agreedToTerms) {
+        console.log("Terms not agreed.");
+      }
     }
   };
 
@@ -143,6 +152,8 @@ export function AccessResources() {
                 handleInputChange={handleInputChange}
                 handleRecaptchaChange={handleRecaptchaChange}
                 onSubmit={handleSubmit}
+                agreedToTerms={agreedToTerms}
+                onAgreementChange={handleAgreementChange}
               />
             </DialogContent>
           </Dialog>
