@@ -17,12 +17,12 @@ export default function ChameleonDataset() {
       {/* Hero Section */}
       <Hero />
 
-      <div className="container mx-auto px-4 py-12">
+      <div className="mx-auto px-20 py-12">
         <DatasetSummary />
       </div>
 
       {/* Dataset Details Section */}
-      <div className="container mx-auto px-4 py-12 bg-gray-50">
+      <div className="mx-auto px-20 py-12 bg-gray-50">
         <h2 className="text-3xl font-bold mb-10 text-gray-800">Dataset Details</h2>
 
         <DatasetDistribution />
