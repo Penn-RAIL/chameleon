@@ -1,11 +1,15 @@
 import MyNavbar from "./myNavbar"
 import { Hero } from "./hero"
-import { About } from "./about"
-import { Resources } from "./resources"
 import Team from "./team"
 import { ContactForm } from "./contact-form"
 import Footer from "./footer"
-
+import { DatasetSummary } from "./dataset-summary"
+import { DatasetDistribution } from "./dataset-distribution"
+import { PathologyTable } from "./pathology-table"
+import { pathologyData } from "@/data/pathology-data"
+import { GenerationProcess } from "./generation-process"
+import { ExampleReports } from "./example-reports"
+import { AccessResources } from "./access-resources"
 export default function ChameleonDataset() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white">
@@ -13,19 +17,27 @@ export default function ChameleonDataset() {
       {/* Hero Section */}
       <Hero />
 
-      {/* Content Section */}
-      <div className=" mx-auto px-20 py-12">
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* About Section - Takes 2/3 of the width on desktop */}
-          <div className="md:col-span-2">
-            <About />
-          </div>
+      <div className="container mx-auto px-4 py-12">
+        <DatasetSummary />
+      </div>
 
-          {/* Resources Card - Takes 1/3 of the width on desktop */}
-          <div className="md:col-span-1">
-            <Resources />
-          </div>
+      {/* Dataset Details Section */}
+      <div className="container mx-auto px-4 py-12 bg-gray-50">
+        <h2 className="text-3xl font-bold mb-10 text-gray-800">Dataset Details</h2>
+
+        <DatasetDistribution />
+
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <PathologyTable data={pathologyData} />
+          <GenerationProcess />
         </div>
+
+        <ExampleReports />
+      </div>
+
+      {/* Resources Section - After Example Reports */}
+      <div className="container mx-auto px-4 py-16 bg-white">
+        <AccessResources />
       </div>
 
       {/* Team Section */}

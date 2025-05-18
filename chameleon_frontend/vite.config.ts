@@ -5,6 +5,11 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/chameleon/',
+  build: {
+    assetsDir: 'assets',
+    outDir: 'dist'
+  },
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

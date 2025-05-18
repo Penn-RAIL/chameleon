@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button"
+import { FileText, Download, ExternalLink } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { FileText, Download } from "lucide-react"
 import { 
   Dialog, 
   DialogContent, 
@@ -14,16 +14,16 @@ import { DownloadForm } from "./DownloadForm";
 const API_URL = import.meta.env.VITE_BACKEND_URL;
 const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
-console.log(RECAPTCHA_SITE_KEY)
 
 interface FormData {
-  firstName: string;
-  lastName: string;
-  institution: string;
-  email: string;
-}
+    firstName: string;
+    lastName: string;
+    institution: string;
+    email: string;
+  }
+  
 
-export function Resources() {
+export function AccessResources() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
@@ -43,16 +43,6 @@ export function Resources() {
     console.log("reCAPTCHA onChange triggered. Token:", token);
     setRecaptchaToken(token);
   };
-
-  // const validateForm = () => {
-  //   return (
-  //     formData.firstName.trim() !== "" &&
-  //     formData.lastName.trim() !== "" &&
-  //     formData.institution.trim() !== "" &&
-  //     formData.email.trim() !== "" &&
-  //     recaptchaToken !== null
-  //   );
-  // };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -107,27 +97,43 @@ export function Resources() {
       <div className="bg-sky-700 p-6">
         <h2 className="text-2xl font-bold text-white">Resources</h2>
       </div>
-      <CardContent className="p-6 space-y-6">
-        <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <FileText className="h-6 w-6 text-sky-700" />
-            <span className="font-medium text-lg text-gray-900">Research Paper</span>
-          </div>
-          <Button className="w-full bg-sky-700 hover:bg-sky-800">Read the Paper</Button>
-        </div>
 
-        <div className="h-px bg-gray-200 my-4"></div>
-
-        <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <Download className="h-6 w-6 text-sky-600" />
-            <span className="font-medium text-lg text-gray-900">Dataset</span>
+      <CardContent className="p-8 bg-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg border border-gray-100 shadow-md p-6 transition-transform hover:scale-105">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="bg-sky-100 p-3 rounded-full">
+                <FileText className="h-6 w-6 text-sky-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800">Research Paper</h3>
+            </div>
+            <p className="text-gray-600 mb-6">
+              Read the complete methodology and findings in our published research paper.
+            </p>
+            <Button className="w-full bg-sky-600 hover:bg-sky-700 text-white">
+              <ExternalLink className="mr-2 h-4 w-4" />
+              Read the Paper
+            </Button>
           </div>
-          
-          <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg border border-gray-100 shadow-md p-6 transition-transform hover:scale-105">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="bg-sky-100 p-3 rounded-full">
+                <Download className="h-6 w-6 text-sky-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800">Dataset</h3>
+            </div>
+            <p className="text-gray-600 mb-6">
+              Download the complete dataset of 10,000 synthetic chest CT radiology reports.
+            </p>
+            <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
             <DialogTrigger asChild>
-              <Button className="w-full bg-sky-700 hover:bg-sky-800">Download the Data</Button>
+                 <Button className="w-full bg-sky-600 hover:bg-sky-700 text-white">
+                    <Download className="mr-2 h-4 w-4" />
+                    Download the Data
+                </Button>
             </DialogTrigger>
+
             <DialogContent className="sm:max-w-[850px]">
               <DownloadForm 
                 formData={formData}
@@ -140,6 +146,9 @@ export function Resources() {
               />
             </DialogContent>
           </Dialog>
+
+
+          </div>
         </div>
       </CardContent>
     </Card>

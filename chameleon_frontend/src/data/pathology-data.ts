@@ -1,0 +1,20 @@
+export const pathologyData = [
+    { pathology: "Tuberculosis", count: 304, percentage: "6.08%" },
+    { pathology: "Benign Nodules", count: 304, percentage: "6.08%" },
+    { pathology: "Pneumonia", count: 304, percentage: "6.08%" },
+    { pathology: "Bronchitis", count: 292, percentage: "5.84%" },
+    { pathology: "Covid19", count: 292, percentage: "5.84%" },
+    { pathology: "Pulmonary embolism (PE)", count: 292, percentage: "5.84%" },
+    { pathology: "Emphysema", count: 292, percentage: "5.84%" },
+    { pathology: "Bronchiectasis", count: 292, percentage: "5.84%" },
+    { pathology: "Metastatic Nodule", count: 292, percentage: "5.84%" },
+    { pathology: "Pleural Effusion", count: 292, percentage: "5.84%" },
+    { pathology: "Non-Small Cell Lung Cancer", count: 292, percentage: "5.84%" },
+    { pathology: "Adenocarcinoma", count: 292, percentage: "5.84%" },
+    { pathology: "Large Hodgkin Lymphoma", count: 292, percentage: "5.84%" },
+    { pathology: "Calcified granulomas", count: 292, percentage: "5.84%" },
+    { pathology: "Aspergilloma", count: 292, percentage: "5.84%" },
+    { pathology: "Sarcoidosis", count: 292, percentage: "5.84%" },
+    { pathology: "Pulmonary Fibrosis", count: 292, percentage: "5.84%" },
+  ]
+  

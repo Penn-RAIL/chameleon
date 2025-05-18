@@ -7,6 +7,7 @@ import rithvik from '/rithvik.jpeg';
 import dana from '/dana.jpg';
 import charlie from '/charlie.jpg';
 import darco from '/darco.jpg';
+import don from '/don.jpg';
 
 const Team: React.FC = () => {
   return (
@@ -52,6 +53,13 @@ const Team: React.FC = () => {
               picture={darco}
               name="Darco Levic"
               institution="University of Pennsylvania"
+            />
+          </div>
+          <div className="team-cards">
+            <TeamMember
+              picture={don}
+              name="Ebubechukwu D. Enwerem"
+              institution="Drexel University"
             />
           </div>
         </div>
