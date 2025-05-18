@@ -1,5 +1,4 @@
 {
-  "homepage": "https://Penn-RAIL.github.io/chameleon/",
   "name": "chameleon",
   "private": true,
   "version": "0.0.0",
@@ -8,9 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.13",
@@ -20,7 +17,6 @@
     "bootstrap": "^5.3.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "gh-pages": "^6.3.0",
     "lucide-react": "^0.511.0",
     "react": "^19.1.0",
     "react-bootstrap": "^2.10.10",
