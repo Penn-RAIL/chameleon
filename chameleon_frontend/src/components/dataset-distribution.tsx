@@ -28,7 +28,7 @@ export function DatasetDistribution() {
           <div className="bg-amber-600 h-2"></div>
           <CardContent className="p-6">
             <div className="flex items-center justify-between mb-2">
-              <h4 className="text-xl font-semibold text-amber-700">Pathology Reports</h4>
+              <h4 className="text-xl font-semibold text-amber-700">Disease Reports</h4>
               <span className="text-2xl font-bold text-amber-700">5,000</span>
             </div>
             <p className="text-gray-600 mb-4">Reports with 17 different thoracic pathologies</p>
