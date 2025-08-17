@@ -2,13 +2,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button"
 import { FileText, Download, ExternalLink } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { 
-  Dialog, 
-  DialogContent, 
-  DialogTrigger 
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger
 } from "@/components/ui/dialog";
-// @ts-ignore
-import ReCAPTCHA from "react-google-recaptcha";
 import { DownloadForm } from "./DownloadForm";
 
 const API_URL = import.meta.env.VITE_BACKEND_URL;
@@ -119,9 +117,18 @@ export function AccessResources() {
             <p className="text-gray-600 mb-6">
               Read the complete methodology and findings in our published research paper.
             </p>
-            <Button className="w-full bg-sky-600 hover:bg-sky-700 text-white">
-              <ExternalLink className="mr-2 h-4 w-4" />
-              Read the Paper
+            <Button
+              asChild
+              className="w-full bg-sky-600 hover:bg-sky-700 text-white"
+            >
+              <a
+                href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5386019"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Read the Paper
+              </a>
             </Button>
           </div>
 
